@@ -1,0 +1,108 @@
+{
+ "id": "4ESO-MATA-T2-2026-11-10",
+ "titulo": "Examen T2 Proporcionalidad numérica · Matemáticas A 4.º ESO",
+ "version": "B",
+ "puntuacion_maxima_actividad": 10,
+ "regla_criterios": "media_aritmetica",
+ "criterios": {
+  "1.1": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "1.2": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "1.3": [
+   1,
+   7
+  ],
+  "3.2": [
+   3,
+   6,
+   7,
+   8
+  ],
+  "8.2": [
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "actividades": [
+  {
+   "n": 1,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Razones y proporciones"
+  },
+  {
+   "n": 2,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Proporcionalidad directa y cambio de unidades"
+  },
+  {
+   "n": 3,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Proporcionalidad inversa"
+  },
+  {
+   "n": 4,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Repartos directamente proporcionales"
+  },
+  {
+   "n": 5,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Variación porcentual"
+  },
+  {
+   "n": 6,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Porcentajes: IVA y precio sin impuesto"
+  },
+  {
+   "n": 7,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Interés simple y toma de decisiones"
+  },
+  {
+   "n": 8,
+   "enunciado": "(omitido en el repositorio público)",
+   "solucion": "(omitido)",
+   "contenido": "Interés compuesto"
+  }
+ ],
+ "baremo_general": [
+  "10 = resolución completa.",
+  "8 = procedimiento principal correcto con una conclusión relevante pendiente.",
+  "5-7 = desarrollo parcial o error de interpretación/cálculo importante con trabajo válido.",
+  "2-4 = inicio pertinente con errores conceptuales.",
+  "0-1 = sin resolución o solo datos/intento mínimo.",
+  "Se toleran diferencias de céntimos y aproximaciones razonables.",
+  "Expresión correcta con error aislado de calculadora: crédito parcial.",
+  "No se puntúa una fórmula copiada que no se aplica al problema.",
+  "Se aceptan métodos alternativos válidos y cualquier orden de las hojas."
+ ],
+ "decisiones_docentes": [],
+ "_procedencia": "Datos de prueba: estructura real, textos omitidos."
+}

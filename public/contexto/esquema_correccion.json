@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Corrección estructurada de un examen",
+  "type": "object",
+  "required": ["codigo_estudiante", "examen_id", "modelo_ia", "actividades", "feedback_global"],
+  "properties": {
+    "codigo_estudiante": {"type": "string"},
+    "examen_id": {"type": "string"},
+    "modelo_ia": {"type": "string"},
+    "actividades": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["n", "transcripcion", "puntuacion", "justificacion", "confianza", "requiere_revision"],
+        "properties": {
+          "n": {"type": "integer"},
+          "pagina": {"type": ["integer", "null"]},
+          "transcripcion": {"type": "string", "description": "Lo que el estudiante ha escrito, literal. Usar [ilegible] donde no se pueda leer."},
+          "puntuacion": {"type": "number", "minimum": 0, "maximum": 10, "multipleOf": 0.25},
+          "justificacion": {"type": "string"},
+          "aciertos": {"type": "string"},
+          "errores": {"type": "array", "items": {"type": "object", "required": ["tipo", "descripcion"], "properties": {
+            "tipo": {"enum": ["conceptual", "calculo", "lectura_enunciado", "respuesta_incompleta", "unidades", "copia_de_datos", "sin_respuesta"]},
+            "descripcion": {"type": "string"}, "contenido": {"type": "string"}}}},
+          "metodo_alternativo": {"type": "boolean"},
+          "confianza": {"enum": ["alta", "media", "baja"]},
+          "requiere_revision": {"type": "boolean"},
+          "motivo_revision": {"type": "string"}
+        }
+      }
+    },
+    "extra": {"type": ["object", "null"]},
+    "feedback_global": {"type": "string"},
+    "propuestas_mejora": {"type": "array", "items": {"type": "object", "properties": {
+      "dificultad": {"type": "string"}, "tipo_actividad": {"type": "string"}, "descripcion": {"type": "string"}}}}
+  }
+}

@@ -1,0 +1,81 @@
+{
+ "codigo_estudiante": "E24",
+ "examen_id": "4ESO-MATA-T2-2026-11-10",
+ "modelo_ia": "datos_de_prueba",
+ "actividades": [
+  {
+   "n": 1,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 1.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 2,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 3.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 3,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 8.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 4,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 1.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 5,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 6.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 6,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 10.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 7,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 6.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  },
+  {
+   "n": 8,
+   "pagina": null,
+   "transcripcion": "",
+   "puntuacion": 8.0,
+   "justificacion": "(texto omitido en el repositorio público)",
+   "confianza": "alta",
+   "requiere_revision": false
+  }
+ ],
+ "feedback_global": "(texto omitido en el repositorio público)",
+ "propuestas_mejora": []
+}

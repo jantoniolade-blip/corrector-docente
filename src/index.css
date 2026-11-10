@@ -1,0 +1,28 @@
+:root{--fondo:#f5f6f8;--panel:#fff;--tinta:#16283c;--suave:#5b6675;--linea:#d9dee5;--acento:#0b6b6b;--rojo:#c8102e;--ambar:#b26a00;font-family:system-ui,sans-serif;color:var(--tinta)}
+@media(prefers-color-scheme:dark){:root{--fondo:#12171d;--panel:#1b222b;--tinta:#e7ecf2;--suave:#9aa6b4;--linea:#2e3945;--acento:#4fc3c3;--rojo:#ff6b81;--ambar:#f0b24a}}
+*{box-sizing:border-box}body{margin:0;background:var(--fondo)}
+.app{display:flex;flex-direction:column;height:100dvh}
+header{display:flex;gap:12px;align-items:center;padding:8px 16px;background:var(--panel);border-bottom:1px solid var(--linea);flex-wrap:wrap}
+nav{display:flex;gap:4px;flex:1}.estado{color:var(--suave);font-size:14px}
+button,.soltar,a[download]{font:inherit;color:var(--tinta);background:var(--panel);border:1px solid var(--linea);border-radius:8px;padding:8px 12px;cursor:pointer;text-decoration:none}
+button.activo,button.primario{background:var(--acento);color:#fff;border-color:var(--acento)}button.peligro{color:var(--rojo)}button:disabled{opacity:.5}
+main.col{padding:16px;max-width:960px;width:100%;margin:0 auto;overflow:auto}
+.soltar{display:flex;flex-direction:column;gap:4px;padding:20px;border-style:dashed;text-align:center}.soltar input{display:none}.soltar span{color:var(--suave);font-size:14px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+table{width:100%;border-collapse:collapse;background:var(--panel);margin:12px 0}th,td{padding:8px;border-bottom:1px solid var(--linea);text-align:left}tbody tr{cursor:pointer}
+.aviso{color:var(--ambar);margin:6px 0}.vacio{padding:24px;color:var(--suave)}
+main.revisar{flex:1;display:grid;grid-template-columns:180px minmax(0,1.1fr) minmax(320px,1fr);min-height:0}
+aside{overflow:auto;border-right:1px solid var(--linea);background:var(--panel)}aside button{display:flex;flex-direction:column;align-items:flex-start;width:100%;border:0;border-bottom:1px solid var(--linea);border-radius:0}aside small{opacity:.75}
+.visor{min-height:0;overflow:hidden}.visorpdf{height:100%;display:flex;flex-direction:column}.paginas{flex:1;overflow:auto;padding:8px}.paginas canvas{display:block;width:calc(100% * var(--zoom));max-width:none;margin:0 0 8px;background:#fff}.zoom{display:flex;gap:8px;align-items:center;justify-content:center;padding:4px;border-bottom:1px solid var(--linea)}.zoom button{padding:2px 12px}.panel{overflow:auto;padding:12px}
+.criterios{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;position:sticky;top:-12px;background:var(--fondo);padding:8px 0;z-index:1}
+.criterios div{background:var(--panel);border:1px solid var(--linea);border-radius:8px;padding:6px;text-align:center}.criterios b{display:block;font-size:22px;color:var(--rojo)}.criterios small{color:var(--suave)}
+article{background:var(--panel);border:1px solid var(--linea);border-left:4px solid var(--linea);border-radius:8px;padding:10px;margin:10px 0}
+article.dudosa{border-left-color:var(--ambar)}article.hecha{border-left-color:var(--acento)}
+h4{margin:0 0 6px}.conf{font-size:12px;font-weight:400;padding:2px 6px;border-radius:10px;border:1px solid var(--linea);margin-left:6px}.conf.baja,.conf.media{color:var(--ambar)}
+textarea,input[type=number]{font:inherit;color:var(--tinta);background:var(--fondo);border:1px solid var(--linea);border-radius:6px;padding:6px}textarea{width:100%}input[type=number]{width:80px;font-size:18px;font-weight:700}
+.trans{font-size:14px;color:var(--suave)}details{font-size:14px;margin-bottom:6px}
+@media(max-width:800px){main.revisar{grid-template-columns:1fr;grid-auto-rows:min-content;overflow:auto}aside{display:flex;overflow-x:auto;border-right:0}aside button{min-width:140px}.visor{height:55dvh}.panel{overflow:visible}}
+
+.pagmask{position:relative;margin:12px 0;border:1px solid var(--linea);touch-action:none;cursor:crosshair;user-select:none}.pagmask img{display:block;width:100%}.pagmask span{position:absolute;background:#222;opacity:.85}
+.boton{border:1px solid var(--linea);border-radius:8px;padding:8px 12px;cursor:pointer;background:var(--panel)}.codigo{font:inherit;width:90px;padding:6px;border:1px solid var(--linea);border-radius:6px;background:var(--fondo);color:var(--tinta)}
+h3{margin:18px 0 6px}

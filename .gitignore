@@ -1,0 +1,12 @@
+node_modules/
+dist/
+privado/
+paquetes/
+trabajo/
+resultados/
+salidas/
+*.zip
+*.pdf
+identidades.csv
+.env*
+__pycache__/
