@@ -26,3 +26,5 @@ textarea,input[type=number]{font:inherit;color:var(--tinta);background:var(--fon
 .pagmask{position:relative;margin:12px 0;border:1px solid var(--linea);touch-action:none;cursor:crosshair;user-select:none}.pagmask img{display:block;width:100%}.pagmask span{position:absolute;background:#222;opacity:.85}
 .boton{border:1px solid var(--linea);border-radius:8px;padding:8px 12px;cursor:pointer;background:var(--panel)}.codigo{font:inherit;width:90px;padding:6px;border:1px solid var(--linea);border-radius:6px;background:var(--fondo);color:var(--tinta)}
 h3{margin:18px 0 6px}
+.formulario input,.formulario select{font:inherit;padding:8px;border:1px solid var(--linea);border-radius:6px;background:var(--panel);color:var(--tinta);min-width:0}.formulario input:not(.codigo){flex:1 1 180px}
+nav{flex-wrap:wrap}a{color:var(--acento)}

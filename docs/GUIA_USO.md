@@ -11,3 +11,10 @@
 
 Los nombres solo existen en tu dispositivo: el asistente recibe únicamente el código `E##` y las páginas con el nombre tapado.
 Si en la aplicación cargas el PDF original en lugar del seudonimizado, el PDF corregido saldrá con la cabecera original.
+
+## Refuerzo
+1. En **Refuerzo** verás, por cada contenido con dificultades, qué estudiantes necesitan reforzar o consolidar.
+2. Añade tus recursos a la biblioteca (relaciones, juegos, vídeos…) con sus contenidos como palabras clave. Se proponen solos cuando encajan.
+3. Si no tienes nada adecuado, pulsa **Copiar encargo para la IA**: el texto describe los errores observados sin nombres ni códigos.
+4. **Descargar plan por estudiante** genera un CSV con lo que recibiría cada uno. Nada se envía al alumnado desde la aplicación.
+5. Guarda una copia de la biblioteca de vez en cuando: vive solo en este dispositivo.

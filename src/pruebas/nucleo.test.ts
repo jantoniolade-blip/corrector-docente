@@ -8,6 +8,7 @@ import { extraerJson, normalizar, validarCorreccion } from '../core/validar'
 import { formulaCriterio, generarExcel } from '../core/excel'
 import { generarPdfCorregido } from '../core/pdf'
 import { diagnosticar, nivel, perfil } from '../core/diagnostico'
+import { afinidad, BIBLIOTECA_INICIAL, encargoParaIA, planCsv, planPorEstudiante, proponerRefuerzo, type Recurso } from '../core/refuerzo'
 
 const dato = (f: string) => readFileSync(new URL(`./datos/${f}`, import.meta.url), 'utf8')
 const ex: Examen = JSON.parse(dato('examen.json'))
@@ -74,5 +75,35 @@ describe('diagnóstico', () => {
   it('da el perfil de un estudiante sin perder actividades', () => {
     const p = perfil(ex, est('E24'))
     expect(p.reforzar.map((x) => x.n)).toEqual([1, 2, 4]); expect(p.reforzar.length + p.consolidar.length + p.domina.length).toBe(8)
+  })
+})
+
+describe('refuerzo', () => {
+  const todos = Object.keys(REF).map(est)
+  const rel: Recurso = { id: 'r1', titulo: 'Relación de repartos', tipo: 'relacion', contenidos: ['repartos proporcionales'], nivel: 'reforzar', minutos: 30 }
+  const inv: Recurso = { id: 'r2', titulo: 'Reto por parejas: obreros y días', tipo: 'cooperativa', contenidos: ['proporcionalidad inversa'], nivel: 'cualquiera' }
+  it('empareja por palabras clave sin confundir contenidos', () => {
+    expect(afinidad('Repartos directamente proporcionales', rel)).toBe(1)
+    expect(afinidad('Proporcionalidad directa y cambio de unidades', inv)).toBeLessThan(1)
+    expect(afinidad('Proporcionalidad inversa', inv)).toBe(1)
+  })
+  it('propone recursos de la biblioteca al grupo que los necesita', () => {
+    const g = proponerRefuerzo(ex, todos, [rel, inv, ...BIBLIOTECA_INICIAL])
+    const repartos = g.find((x) => x.actividad === 4 && x.nivel === 'reforzar')!
+    expect(repartos.estudiantes.sort()).toEqual(['E22', 'E24']); expect(repartos.recursos.map((r) => r.id)).toEqual(['r1'])
+    expect(g.find((x) => x.actividad === 3)!.recursos.map((r) => r.id)).toEqual(['r2'])
+    expect(g.find((x) => x.actividad === 1 && x.nivel === 'reforzar')!.recursos).toEqual([])   // sin recurso: hay que crearlo
+    expect(g.every((x) => !x.recursos.some((r) => r.tipo === 'juego'))).toBe(true)              // los juegos de 1.º no encajan aquí
+  })
+  it('respeta el tiempo máximo y arma el plan por estudiante', () => {
+    const g = proponerRefuerzo(ex, todos, [rel], { maxRecursosPorGrupo: 2, minutosMaximos: 20, incluirConsolidar: false })
+    expect(g.every((x) => x.nivel === 'reforzar' && x.recursos.length === 0)).toBe(true)
+    const plan = planPorEstudiante(proponerRefuerzo(ex, todos, [rel]))
+    expect(plan.E24.map((x) => x.contenido)).toContain('Repartos directamente proporcionales'); expect(plan.E25).toBeUndefined()
+  })
+  it('el encargo para la IA y el CSV no llevan códigos ni nombres indebidos', () => {
+    const g = proponerRefuerzo(ex, todos, [rel])
+    expect(encargoParaIA(g[0], ex)).not.toMatch(/E2\d/)
+    expect(planCsv(g, (c) => 'Alumno ' + c)).toMatch(/"Alumno E24";"Repartos directamente proporcionales";"reforzar";"Relación de repartos"/)
   })
 })

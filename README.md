@@ -1,8 +1,8 @@
-# Corrector docente · v0.2
+# Corrector docente · v0.3
 
 Aplicación independiente: https://jantoniolade-blip.github.io/corrector-docente/
 
-Revisión de propuestas de corrección por criterios, diagnóstico del grupo y exportación Excel y PDF. Los archivos y las identidades permanecen en el dispositivo (IndexedDB). La IA se utiliza importando sus respuestas; no hay una API de IA integrada.
+Revisión de propuestas de corrección por criterios, diagnóstico del grupo, propuesta de refuerzo con biblioteca de recursos y exportación Excel y PDF. Los archivos y las identidades permanecen en el dispositivo (IndexedDB). La IA se utiliza importando sus respuestas; no hay una API de IA integrada.
 
 ## Desarrollo
 

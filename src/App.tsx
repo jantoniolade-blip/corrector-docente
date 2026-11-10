@@ -5,10 +5,11 @@ import { formato, notasPorCriterio, prioridad, puntosVigentes } from './core/cri
 import { extraerJson, normalizar, validarCorreccion } from './core/validar'
 import { VisorPdf } from './VisorPdf'
 import { Seudonimizar } from './Seudonimizar'
+import { Refuerzo } from './Refuerzo'
 import { diagnosticar, perfil } from './core/diagnostico'
 
-type Vista = 'seudonimizar' | 'preparar' | 'revisar' | 'diagnostico' | 'exportar'
-const ETIQUETA: Record<Vista, string> = { seudonimizar: 'Seudonimizar', preparar: '1 · Preparar', revisar: '2 · Revisar', diagnostico: '3 · Diagnóstico', exportar: '4 · Exportar' }
+type Vista = 'seudonimizar' | 'preparar' | 'revisar' | 'diagnostico' | 'refuerzo' | 'exportar'
+const ETIQUETA: Record<Vista, string> = { seudonimizar: 'Seudonimizar', preparar: '1 · Preparar', revisar: '2 · Revisar', diagnostico: '3 · Diagnóstico', refuerzo: '4 · Refuerzo', exportar: '5 · Exportar' }
 const descargar = (datos: BlobPart, nombre: string, tipo: string) => {
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([datos], { type: tipo })); a.download = nombre; a.click()
 }
@@ -125,6 +126,8 @@ export default function App() {
 
       {vista === 'seudonimizar' && <Seudonimizar />}
       {vista === 'diagnostico' && (ex ? <VistaDiagnostico ex={ex} estudiantes={estudiantes} /> : <main className="col"><p>Carga primero el examen.</p></main>)}
+
+      {vista === 'refuerzo' && (ex ? <Refuerzo ex={ex} estudiantes={estudiantes} /> : <main className="col"><p>Carga primero el examen.</p></main>)}
 
       {vista === 'exportar' && <main className="col">
         <h2>Exportar</h2>

@@ -15,11 +15,13 @@
 | 11 | 2026-11-10 | El código se guarda en una rama del repositorio público, sin datos de alumnado | El repositorio publica en la web todo lo que llega a `main` |
 | 12 | 2026-11-10 | Diagnóstico determinista con umbrales <5 reforzar, 5–8 consolidar, ≥8 domina; ampliación con todos los criterios ≥9 | Transparente y ajustable; un examen es una sola evidencia |
 | 13 | 2026-11-10 | La copia seudonimizada se genera como imagen | Elimina texto oculto y metadatos del original |
+| 14 | 2026-11-10 | Refuerzo: primero la biblioteca del docente (coincidencia por palabras clave); si no hay recurso, se genera un encargo anónimo para una IA | Reutilizar antes de crear; nada se asigna sin el profesor |
+| 15 | 2026-11-10 | La biblioteca se guarda aparte del lote de exámenes | Es del docente y sirve para todos los exámenes |
 
 ## Pendiente (por orden)
 1. Corregir los cinco exámenes con ChatGPT y con Claude en conversaciones nuevas e importar los JSON: es la medida real de la Fase 1.
 3. Agrupación automática de páginas escaneadas por estudiante.
 4. Adaptadores de API (OpenAI, Anthropic) con estimación y tope de gasto.
 5. Sincronización entre dispositivos (PostgreSQL) y copia en Drive.
-6. Propuestas de actividades de refuerzo a partir del diagnóstico y de la biblioteca de recursos (incluidos los juegos).
+6. Llevar el plan de refuerzo aprobado a la hoja «Cola de tareas» de Classroom.
 7. Alojamiento de la aplicación.
